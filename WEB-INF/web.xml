@@ -20,25 +20,23 @@
 	<servlet>
 		<servlet-name>Controlador</servlet-name>
 		<servlet-class>com.mezcales.parroquia.controlador.Controlador</servlet-class>
-		<load-on-startup/>
+		<load-on-startup>0</load-on-startup>
 	</servlet>
 
 	<servlet>
 		<servlet-name>ControladorIMG</servlet-name>
 		<servlet-class>com.mezcales.parroquia.controlador.ControladorIMG</servlet-class>
-		<load-on-startup/>
+		<load-on-startup>1</load-on-startup>
 	</servlet>
 
 	<servlet>
 		<servlet-name>ServletRegistroUsuario</servlet-name>
 		<servlet-class>com.mezcales.parroquia.controlador.ServletRegistroUsuario</servlet-class>
-		<load-on-startup/>
 	</servlet>
 
 	<servlet>
 		<servlet-name>ServletUsuario</servlet-name>
 		<servlet-class>com.mezcales.parroquia.controlador.ServletUsuario</servlet-class>
-		<load-on-startup/>
 	</servlet>
 
 	<servlet-mapping>
