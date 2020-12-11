@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,33 +39,6 @@
 					<div class="col-md-6 text-right">
 						<div class="top_nav_right">
 							<ul class="top_nav_menu">
-
-								<!-- Currency / Language / My Account -->
-
-							<!--	<li class="currency">
-									<a href="#">
-										usd
-										<i class="fa fa-angle-down"></i>
-									</a>
-									<ul class="currency_selection">
-										<li><a href="#">cad</a></li>
-										<li><a href="#">aud</a></li>
-										<li><a href="#">eur</a></li>
-										<li><a href="#">gbp</a></li>
-									</ul>
-								</li>
-								<li class="language">
-									<a href="#">
-										English
-										<i class="fa fa-angle-down"></i>
-									</a>
-									<ul class="language_selection">
-										<li><a href="#">French</a></li>
-										<li><a href="#">Italian</a></li>
-										<li><a href="#">German</a></li>
-										<li><a href="#">Spanish</a></li>
-									</ul>
-								</li> -->
 								<li class="account">
 									<a href="#">
 										Mi Cuenta
@@ -91,12 +67,12 @@
 						</div>
 						<nav class="navbar">
 							<ul class="navbar_menu">
-								<li><a href="index.html">Inicio</a></li>
-								<li><a href="categories.html">Tienda</a></li>
+								<li><a href="index.jsp">Inicio</a></li>
+								<li><a href="Controlador?accion=tienda">Tienda</a></li>
 							<!--<li><a href="#">promotion</a></li> -->
 							<!--<li><a href="#">pages</a></li> -->
 								<li><a href="#">blog</a></li>
-								<li><a href="contact.html">contacto</a></li>
+								<li><a href="contact.jsp">contacto</a></li>
 							</ul>
 							<ul class="navbar_user">
 								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
@@ -128,29 +104,6 @@
 		<div class="hamburger_menu_content text-right">
 			<ul class="menu_top_nav">
 				<li class="menu_item has-children">
-				 <!--	<a href="#">
-						usd
-						<i class="fa fa-angle-down"></i>
-					</a>
-					<ul class="menu_selection">
-						<li><a href="#">cad</a></li>
-						<li><a href="#">aud</a></li>
-						<li><a href="#">eur</a></li>
-						<li><a href="#">gbp</a></li>
-					</ul>
-				</li>
-				<li class="menu_item has-children">
-					<a href="#">
-						English
-						<i class="fa fa-angle-down"></i>
-					</a>
-					<ul class="menu_selection">
-						<li><a href="#">French</a></li>
-						<li><a href="#">Italian</a></li>
-						<li><a href="#">German</a></li>
-						<li><a href="#">Spanish</a></li>
-					</ul>
-				</li> -->
 				<li class="menu_item has-children">
 					<a href="#">
 						Mi Cuenta
@@ -161,12 +114,12 @@
 						<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Registro</a></li>
 					</ul>
 				</li>
-				<li class="menu_item"><a href="index.html">Inicio</a></li>
-				<li class="menu_item"><a href="categories.html">Tienda</a></li>
+				<li class="menu_item"><a href="index.jsp">Inicio</a></li>
+				<li class="menu_item"><a href="Controlador?accion=tienda">Tienda</a></li>
 			<!--<li class="menu_item"><a href="#">promotion</a></li> -->
 			<!--<li class="menu_item"><a href="#">pages</a></li> -->
 				<li class="menu_item"><a href="#">blog</a></li>
-				<li class="menu_item"><a href="contact.html">contacto</a></li>
+				<li class="menu_item"><a href="contact.jsp">contacto</a></li>
 			</ul>
 		</div>
 	</div>
@@ -179,9 +132,9 @@
 
 				<div class="breadcrumbs d-flex flex-row align-items-center">
 					<ul>
-						<li><a href="index.html">Inicio</a></li>
-						<li><a href="categories.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Producto</a></li>
-						<li class="active"><a href="single.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Descripción del Producto</a></li>
+						<li><a href="index.jsp">Inicio</a></li>
+						<li><a href="Controlador?accion=tienda"><i class="fa fa-angle-right" aria-hidden="true"></i>Producto</a></li>
+						<li class="active"><a href="single.jsp"><i class="fa fa-angle-right" aria-hidden="true"></i>Descripción del Producto</a></li>
 					</ul>
 				</div>
 
@@ -493,7 +446,7 @@
 					<ul class="footer_nav">
 						<li><a href="#">Blog</a></li>
 						<li><a href="#">FAQs</a></li>
-						<li><a href="contact.html">Contactanos</a></li>
+						<li><a href="contact.jsp">Contactanos</a></li>
 					</ul>
 				</div>
 			</div>
@@ -529,6 +482,22 @@
 <script src="plugins/easing/easing.js"></script>
 <script src="plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
 <script src="js/single_custom.js"></script>
+</script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+  	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+		crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/funciones.js" type="text/javascript"></script>
 </body>
 
 </html>
