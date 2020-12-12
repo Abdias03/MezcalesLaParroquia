@@ -23,7 +23,7 @@
 									<li><a href="contact.jsp">contacto</a></li>
 								</ul>
 								<ul class="navbar_user">
-									<li><a href="usuario.jsp" onclick="document.getElementById('id01').style.display='block'"><i class="fa fa-user"
+									<li><a href="#" onclick="document.getElementById('id01').style.display='block'"><i class="fa fa-user"
 											aria-hidden="true"></i></a></li>
 									<li class="checkout"><a href="Controlador?accion=Carrito">
 											<i class="fa fa-shopping-cart" aria-hidden="true"></i> <span

@@ -160,9 +160,8 @@ to {
 							placeholder="Enter Password" name="Password" required>
 
 						<button type="submit" name="accion" value="Ingresar">Login</button>
-						<label> <input type="checkbox" checked="checked"
-							name="remember"> Remember me
-						</label>
+						<button type="button"
+						onclick="document.getElementById('id02').style.display='block'" style="background:blue">Registro</button>
 					</div>
 
 					<div class="container" style="background-color: #f1f1f1">

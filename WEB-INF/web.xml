@@ -16,7 +16,7 @@
 	<session-config>
 		<session-timeout>30</session-timeout>
 	</session-config>
-	
+
 	<servlet>
 		<servlet-name>Controlador</servlet-name>
 		<servlet-class>com.mezcales.parroquia.controlador.Controlador</servlet-class>
@@ -56,6 +56,25 @@
 		<servlet-name>ServletUsuario</servlet-name>
 		<url-pattern>/ServletUsuario/*</url-pattern>
 	</servlet-mapping>
+
+	<filter>
+		<filter-name>RestringirAcceso</filter-name>
+		<filter-class>com.mezcales.parroquia.controlador.RestringirAcceso</filter-class>
+		<init-param>
+			<param-name>fichero_log</param-name>
+			<param-value>log.txt</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>RestringirAcceso</filter-name>
+		<servlet-name>ServletUsuario</servlet-name>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>RestringirAcceso</filter-name>
+		<url-pattern>/ServletUsuario/*</url-pattern>
+	</filter-mapping>
 
 
 </web-app>
