@@ -47,29 +47,31 @@ body {
 	<div class="rowUser">
   <div class="col-750">
     <div class="containerUser">
-      <form action="/action_page.php">
+      <form action="${pageContext.request.contextPath}/ServletUsuario?accion=actualizar&idCliente=${cliente.idCliente}" method="POST">
 
         <div class="rowUser">
           <div class="col-505">
             <h3>Mi Informacion</h3>
-            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-            <input type="text" id="fname" name="firstname" value ="${nombre}" placeholder="John M. Doe">
+            <label for="fname"><i class="fa fa-user"></i>Nombre Completo</label>
+            <input type="text" id="fname" name="name" value ="${cliente.nombre}" placeholder="Andres Lopez">
             <label for="email"><i class="fa fa-envelope"></i> Email</label>
-            <input type="text" id="email" name="email" value="${email}" placeholder="john@example.com">
-            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
-            <label for="city"><i class="fa fa-institution"></i> City</label>
-            <input type="text" id="city" name="city" placeholder="New York">
-            <label for="state">State</label>
-            <input type="text" id="state" name="state" placeholder="NY">
-            <label for="zip">Zip</label>
-            <input type="text" id="zip" name="zip" placeholder="10001">
+            <input type="text" id="email" name="email" value="${cliente.email}" placeholder="john@example.com">
+            <label for="adr"><i class="fa fa-address-card-o"></i>Direccion</label>
+            <input type="text" id="adr" name="address" value="${cliente.direccion}" placeholder="542 W. 15th Street">
+            <label for="tel"><i class="fa fa-mobile" aria-hidden="true"></i>Telefono</label>
+            <input type="text" id="cel" name="telefono" value="${cliente.telefono}" placeholder="5567404589">
+            <label for="city"><i class="fa fa-institution"></i>Ciudad</label>
+            <input type="text" id="city" name="city" value="${cliente.ciudad}" placeholder="CDMX">
+            <label for="zip">Codigo Postal</label>
+            <input type="text" id="zip" name="zip" value="${cliente.zip}"placeholder="10001">
+            <input type="text" id="id" name="idCliente" value="${cliente.idCliente}"placeholder="10001">
               </div>
 			</div>
            <label>
-          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+           Actualiazar Datos
         </label>
-        <input type="submit" value="Continue to checkout" class="btnu">
+        <input type="submit" value="Actualizar" class="btnu">
+        <button type="button" onclick="iniciaProcesoFirmaDigital('hoja de buro');" class="cancelbtn">Eliminar</button>
       </form>
     </div>
   </div>
@@ -136,7 +138,7 @@ body {
 						<a href="#" class="btn btn-info btn-block">Realizar pago</a> <a
 							href="Controlador?accion=GenerarCompra"
 							class="btn btn-danger btn-block">Generar Compra</a> <a
-							href="index.jsp">${email}</a>
+							href="index.jsp"></a>
 					</div>
 				</div>
 			</div>

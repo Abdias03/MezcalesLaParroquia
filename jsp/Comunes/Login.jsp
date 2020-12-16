@@ -145,7 +145,7 @@ to {
 			<div id="id01" class="modal">
 
 				<form class="modal-content animate" action="ServletUsuario"
-					method="post">
+					method="post" onsubmit="return validarLogin(this);">
 					<div class="imgcontainer">
 						<span
 							onclick="document.getElementById('id01').style.display='none'"
@@ -154,10 +154,11 @@ to {
 					</div>
 
 					<div class="container">
-						<label for="uname"><b>Email</b></label> <input type="text"
-							placeholder="Enter Username" name="correo" required> <label
-							for="psw"><b>Password</b></label> <input type="password"
-							placeholder="Enter Password" name="Password" required>
+						<label for="uname"><b>Email</b></label> 
+						<input type="text" placeholder="Enter Username" name="correo" onfocus="this.select();" required> 
+						<label for="psw"><b>Password</b></label>
+						<input type="password" placeholder="Enter Password" name="Password" onfocus="this.select();" id="myInput" required>
+						<input type="checkbox" onclick="myFunction()">Show Password
 
 						<button type="submit" name="accion" value="Ingresar">Login</button>
 						<button type="button"
