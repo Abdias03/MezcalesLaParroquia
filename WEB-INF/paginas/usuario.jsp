@@ -43,7 +43,7 @@ body {
 }
 	</style>
 	
-	
+
 	<div class="rowUser">
   <div class="col-750">
     <div class="containerUser">
@@ -76,7 +76,6 @@ body {
     </div>
   </div>
 </div>
-
 
 
 	<div class="container mt-4">

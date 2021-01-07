@@ -36,6 +36,10 @@
 		<servlet-name>ServletUsuario</servlet-name>
 		<servlet-class>com.mezcales.parroquia.controlador.ServletUsuario</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>RestringirAcceso</servlet-name>
+		<servlet-class>com.mezcales.parroquia.controlador.RestringirAcceso</servlet-class>
+	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>Controlador</servlet-name>

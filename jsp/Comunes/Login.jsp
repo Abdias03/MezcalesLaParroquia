@@ -147,18 +147,17 @@ to {
 				<form class="modal-content animate" action="ServletUsuario"
 					method="post" onsubmit="return validarLogin(this);">
 					<div class="imgcontainer">
-						<span
-							onclick="document.getElementById('id01').style.display='none'"
+						<span id="close"
 							class="close" title="Close Modal">&times;</span> <img
 							src="images/login_avatar.png" alt="Avatar" class="avatar">
 					</div>
 
 					<div class="container">
 						<label for="uname"><b>Email</b></label> 
-						<input type="text" placeholder="Enter Username" name="correo" onfocus="this.select();" required> 
+						<input type="text" placeholder="Enter Username" name="correo" onfocus="this.select();" id="email" required> 
 						<label for="psw"><b>Password</b></label>
-						<input type="password" placeholder="Enter Password" name="Password" onfocus="this.select();" id="myInput" required>
-						<input type="checkbox" onclick="myFunction()">Show Password
+						<input type="password" placeholder="Enter Password" name="Password" onfocus="this.select();" id="password" required>
+						<input type="checkbox" onclick="saludo()">Show Password
 
 						<button type="submit" name="accion" value="Ingresar">Login</button>
 						<button type="button"
@@ -167,26 +166,15 @@ to {
 
 					<div class="container" style="background-color: #f1f1f1">
 						<button type="button"
-							onclick="document.getElementById('id01').style.display='none'"
-							class="cancelbtn">Cancel</button>
+							class="cancelbtn" id="cancelar">Cancel</button>
 						<span class="psw">Forgot <a href="#">password?</a></span>
 					</div>
-				</form>
+				</form> 
 			</div>
-
-			<script>
-				// Get the modal
-				var modal = document.getElementById('id01');
-
-				// When the user clicks anywhere outside of the modal, close it
-				window.onclick = function(event) {
-					if (event.target == modal) {
-						modal.style.display = "none";
-					}
-				}
-			</script>
+			
+			<!-- 							onclick="document.getElementById('id01').style.display='none'" -->
 
 			<!-- End Login -->
-
+<script src="js/prueba.js" type="text/javascript"></script>
 </body>
 </html>
