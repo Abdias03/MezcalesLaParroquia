@@ -100,46 +100,45 @@ function validarLogin(form) {
 	return true;
 }
 
+function validarFormulario(form) {
+	// validamos el usuario 
+
+	var emails = form.email;
+	if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(emails.value)) {
+	} else {
+		alert("Ingresa un email valido.");
+		emails.focus();
+		emails.select();
+		return false;
+	}
+
+	var password = form.Password;
+	var password2 = form.pswrepeat;
+
+	if (password.value.length > 3 && password2.value.length > 3) {
+		if (password.value == password2.value) {
+
+		} else if (password.value != password2.value) {
+			alert("El password no coincide");
+			password.focus();
+			password.select();
+			return false;
+		}
+	} else {
+		alert("El password debe contener al menos 3 caracteres ");
+		password.focus();
+		password.select();
+		return false;
+	}
+
+	// Formulario valido 
+	alert(" valido, enviando datos...");
+	return true;
+}
+
 (function() {
 	'use strict';
 	document.addEventListener('DOMContentLoaded', function() {
-
-
-		function validarFormulario(form) {
-			// validamos el usuario 
-
-			var emails = form.email;
-			if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(emails.value)) {
-			} else {
-				alert("Ingresa un email valido.");
-				emails.focus();
-				emails.select();
-				return false;
-			}
-
-			var password = form.Password;
-			var password2 = form.pswrepeat;
-
-			if (password.value.length > 3 && password2.value.length > 3) {
-				if (password.value == password2.value) {
-
-				} else if (password.value != password2.value) {
-					alert("El password no coincide");
-					password.focus();
-					password.select();
-					return false;
-				}
-			} else {
-				alert("El password debe contener al menos 3 caracteres ");
-				password.focus();
-				password.select();
-				return false;
-			}
-
-			// Formulario valido 
-			alert(" valido, enviando datos...");
-			return true;
-		}
 
 		// Registro
 		var modal = document.getElementById('id02');
@@ -170,10 +169,18 @@ function validarLogin(form) {
 		//Activar Registro con la respuesta del servidor web
 		var activa = document.getElementById('id07');
 		var registro = document.getElementById('id02');
-		if(activa.value == 1){
+		if (activa.value == 1) {
 			registro.style.display = "block";
 		}
-	
+
+		// Activar mensaje de Contraseña o correo incorrecto 
+		var activa = document.getElementById('id08');
+		var login = document.getElementById('id01');
+		if (activa.value == 1) {
+			login.style.display = "block";
+			alert('El password o email es incorrecto');
+		}
+
 		// Cerrar Login
 		var modal = document.getElementById('id01');
 		var cerrar = document.getElementById('cancelar');
@@ -258,15 +265,15 @@ function validarLogin(form) {
 
 })();
 
-		function myFunction() {
-			var x = document.getElementById("password");
-			if (x.type === "password") {
-				x.type = "text";
-				alert("se muestra el password");
-			} else {
-				x.type = "password";
-			}
-		}
+function myFunction() {
+	var x = document.getElementById("password");
+	if (x.type === "password") {
+		x.type = "text";
+		alert("se muestra el password");
+	} else {
+		x.type = "password";
+	}
+}
 
 
 /*

@@ -20,6 +20,7 @@
 
 <meta charset="utf-8">
 <jsp:include page="/jsp/Comunes/Estilos.jsp" />
+<link rel="stylesheet" type="text/css" href="css/tienda.css">
 </head>
 
 <body>
@@ -94,8 +95,10 @@
 
 									<c:if test="${fn:containsIgnoreCase(producto, 'pulpa')}">
 										<!-- Product 1 -->
+										
 										<div class="product-item pulpa">
 											<div class="product discount product_filter">
+											<div class="product-box">
 												<div class="product_image">
 													<img src="ControladorIMG?id=${pro.getId()}" alt="">
 												</div>
@@ -106,17 +109,20 @@
 													</h6>
 													<div class="product_price">${pro.getPrecio()}</div>
 												</div>
-											</div>
-											<div class="red_button add_to_cart_button">
+											<div class="red_button_tienda add_to_cart_button">
 												<a
 													href="Controlador?accion=AgregarCarrito&id=${pro.getId()}">Agregar
 													al carrito</a>
 											</div>
 										</div>
+										</div>
+										</div>
 									</c:if>
 									<!-- Product Crema 2 -->
 									<c:if test="${fn:containsIgnoreCase(producto, 'crema')}">
+									  
 										<div class="product-item crema">
+										<div class="product-box">
 											<div class="product product_filter">
 												<div class="product_image">
 													<img src="ControladorIMG?id=${pro.getId()}" alt="">
@@ -130,18 +136,20 @@
 														<span>$500.00</span>
 													</div>
 												</div>
-											</div>
-											<div class="red_button add_to_cart_button">
+											<div class="red_button_tienda add_to_cart_button">
 												<a
 													href="Controlador?accion=AgregarCarrito&id=${pro.getId()}">Agregar
 													al carrito</a>
 											</div>
+										</div>	
+										</div>
 										</div>
 									</c:if>
 									<!-- Product Natural 3 -->
 									<c:if test="${fn:containsIgnoreCase(producto, 'natural')}">
 										<div class="product-item natural">
 											<div class="product product_filter">
+											 <div class="product-box">
 												<div class="product_image">
 													<img src="ControladorIMG?id=${pro.getId()}" alt="">
 												</div>
@@ -154,12 +162,13 @@
 														<span>$500.00</span>
 													</div>
 												</div>
-											</div>
-											<div class="red_button add_to_cart_button">
+											<div class="red_button_tienda add_to_cart_button">
 												<a
 													href="Controlador?accion=AgregarCarrito&id=${pro.getId()}">Agregar
 													al carrito</a>
 											</div>
+										</div>
+										</div>
 										</div>
 									</c:if>
 								</c:forEach>

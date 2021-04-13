@@ -12,7 +12,15 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
-
+	
+	<context-param>
+		<param-name>urlpaypal</param-name>
+		<param-value>https://www.paypal.com/sdk/js?client-id=AWfiRUR6iQSHEgkmhiune9qqTPWsfmOW_YqkVjG3sTtA9qw9RIVTjtkRRh4fbwIO73GmCYAyYkHXtPpz</param-value>
+	</context-param>
+	<context-param>
+		<param-name>urlretorno</param-name>
+		<param-value>http://localhost:8081/mezcaleslaparroquiaweb/Controlador</param-value>
+	</context-param>
 	<session-config>
 		<session-timeout>30</session-timeout>
 	</session-config>
@@ -40,6 +48,20 @@
 		<servlet-name>RestringirAcceso</servlet-name>
 		<servlet-class>com.mezcales.parroquia.controlador.RestringirAcceso</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>Administrador</servlet-name>
+		<servlet-class>com.mezcales.parroquia.controlador.Administrador</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>AuthorizePaymentServlet</servlet-name>
+		<servlet-class>com.mezcales.parroquia.controlador.AuthorizePaymentServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AuthorizePaymentServlet</servlet-name>
+		<url-pattern>/AuthorizePaymentServlet/*</url-pattern>
+	</servlet-mapping>
 
 	<servlet-mapping>
 		<servlet-name>Controlador</servlet-name>
@@ -60,6 +82,11 @@
 		<servlet-name>ServletUsuario</servlet-name>
 		<url-pattern>/ServletUsuario/*</url-pattern>
 	</servlet-mapping>
+	
+	<servlet-mapping>
+	<servlet-name>Administrador</servlet-name>
+	<url-pattern>/Administrador/*</url-pattern>
+	</servlet-mapping>
 
 	<filter>
 		<filter-name>RestringirAcceso</filter-name>
@@ -79,6 +106,10 @@
 		<filter-name>RestringirAcceso</filter-name>
 		<url-pattern>/ServletUsuario/*</url-pattern>
 	</filter-mapping>
+	
+	<error-page>
+		<location>/404.html</location>
+	</error-page>
 
 
 </web-app>

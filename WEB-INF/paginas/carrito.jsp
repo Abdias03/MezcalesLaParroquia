@@ -20,6 +20,8 @@
 
 <meta charset="utf-8">
 <jsp:include page="/jsp/Comunes/Estilos.jsp" />
+<!-- <script scr="https://www.paypalobjects.com/api/checkout.js"></script> -->
+<script src="https://www.paypal.com/sdk/js?client-id=AQJqospxVrbtlWQXWbUzzQhfZkfmYyK6zqyN0fTfemEjsE6QOpXUy9UVxY2mEG4SSlvL0WyVGwrfpeRU"></script>
 </head>
 
 <body>
@@ -29,16 +31,9 @@
 	<header class="header trans_300">
 
 		<!-- Navegacion Superior -->
-
 		<jsp:include page="/jsp/Comunes/NavSuperior.jsp" />
-
-		<!-- Login -->
 		<jsp:include page="/jsp/Comunes/Login.jsp" />
-
-		<!-- Registro -->
 		<jsp:include page="/jsp/Comunes/Registro.jsp" />
-
-		<!-- Main Navigation -->
 		<jsp:include page="/jsp/Comunes/MainNav.jsp" />
 
 	</header>
@@ -97,17 +92,22 @@
 							<h3>Generar Compra</h3>
 						</div>
 						<div class="card-body">
-							<label>subtotal:</label> <input type="text"
-								value="$ ${totalPagar}0" readonly="" class="form-control">
-							<label>Descuento:</label> <input type="text" readonly=""
-								class="form-control"> <label>TotalPagar:</label> <input
-								type="text" value="$ ${totalPagar}0" readonly=""
-								class="form-control">
+						<form action="${pageContext.request.contextPath}/AuthorizePaymentServlet?accion=pagar" method="POST">
+						
+							<label>subtotal:</label> 
+							<input type="text" name="subtotal" value="${totalPagar}" name="subtotal" readonly="" class="form-control">
+							<label>Descuento:</label>
+							<input type="text" readonly="" class="form-control">
+							<label>TotalPagar:</label> 
+							<input type="text" name="Total_pagar" value="${totalPagar}" readonly="" class="form-control">
+<%-- 							<input type="hidden" id="idProducto" value="${car.getNombres()}" name="nombre"> --%>
 						</div>
 						<div class="card-footer">
-							<a href="#" class="btn btn-info btn-block">Realizar pago</a> <a
-								href="Controlador?accion=GenerarCompra"
-								class="btn btn-danger btn-block">Generar Compra</a>
+							 <button type="submit" class="signupbtn">Comprar</button>
+							 <img data-testid="header-logo" src="https://www.paypalobjects.com/checkoutweb/release/hermione/media/logo.7e5b43e3.svg" width="112" height="29" alt="PayPal">
+<%-- 								<%@include file="checkout.jsp"%> --%>
+<!-- 							<a href="Controlador?accion=GenerarCompra" class="btn btn-danger btn-block">Generar Compra</a> -->
+						</form>
 						</div>
 					</div>
 				</div>

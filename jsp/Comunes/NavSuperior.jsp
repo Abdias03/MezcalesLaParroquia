@@ -12,12 +12,14 @@
 	<%
 	Integer activa = (Integer) request.getAttribute("activa");
 	Integer activaRegistro = (Integer) request.getAttribute("activaRegistro");
+	Integer activaMensaje = (Integer) request.getAttribute("activaMensaje");
 	%>
 
 	<!-- 	Usuario Activo  -->
 	<input type="hidden" id="session" value ='${valor}'>
 	<input type="hidden" id="id04" value="<%=activa %>">
 	<input type="hidden" id="id07" value="<%=activaRegistro %>">
+	<input type="hidden" id="id08" value="<%=activaMensaje %>">
 	<div class="top_nav">
 		<div class="container">
 			<div class="row">
